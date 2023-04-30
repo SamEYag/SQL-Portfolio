@@ -12,7 +12,7 @@ INSERT INTO bookstore VALUES (8, "Witch King", "fantasy", 24, 22);
 INSERT INTO bookstore VALUES (9, "Deep as the Sky, Red as the Sea", "fantasy", 26, 40);
 INSERT INTO bookstore VALUES (10, "Flux", "science fiction", 25, 23);
 INSERT INTO bookstore VALUES (11, "Camp Zero", "science fiction", 23, 20);
-INSERT INTO bookstore VALUES (12, "Chain Gange All Stars", "science fiction", 24, 45);
+INSERT INTO bookstore VALUES (12, "Chain Gang All Stars", "science fiction", 24, 45);
 INSERT INTO bookstore VALUES (13, "Lone Women", "horror", 25, 34);
 INSERT INTO bookstore VALUES (14, "Natural Beauty", "horror", 21, 29);
 INSERT INTO bookstore VALUES (15, "Sisters of the Lost Nation", "horror", 22, 19);
