@@ -1,0 +1,47 @@
+-- Create a bookstore database
+
+CREATE TABLE bookstore (id INTEGER PRIMARY KEY, title TEXT, section TEXT, price INTEGER, number_sold INTEGER);
+INSERT INTO bookstore VALUES (1, "Hello Beautiful", "fiction", 25, 25);
+INSERT INTO bookstore VALUES (2, "The Half Moon", "fiction", 23, 20);
+INSERT INTO bookstore VALUES (3, "The Late Americans", "fiction", 23, 28);
+INSERT INTO bookstore VALUES (4, "Vera Wong's Unsolicited Advice for Murderers", "mystery and thriller", 21, 13);
+INSERT INTO bookstore VALUES (5, "The London Seance Society", "mystery and thriller", 25, 37);
+INSERT INTO bookstore VALUES (6, "Symphony of Secrets", "mystery and thriller", 24, 17);
+INSERT INTO bookstore VALUES (7, "Atalanta", "fantasy", 25, 36);
+INSERT INTO bookstore VALUES (8, "Witch King", "fantasy", 24, 22);
+INSERT INTO bookstore VALUES (9, "Deep as the Sky, Red as the Sea", "fantasy", 26, 40);
+INSERT INTO bookstore VALUES (10, "Flux", "science fiction", 25, 23);
+INSERT INTO bookstore VALUES (11, "Camp Zero", "science fiction", 23, 20);
+INSERT INTO bookstore VALUES (12, "Chain Gange All Stars", "science fiction", 24, 45);
+INSERT INTO bookstore VALUES (13, "Lone Women", "horror", 25, 34);
+INSERT INTO bookstore VALUES (14, "Natural Beauty", "horror", 21, 29);
+INSERT INTO bookstore VALUES (15, "Sisters of the Lost Nation", "horror", 22, 19);
+INSERT INTO bookstore VALUES (16, "Poverty, by America", "nonfiction", 26, 21);
+INSERT INTO bookstore VALUES (17, "Pathogenesis: A History of the World in Eight Plagues", "nonfiction", 25, 14);
+INSERT INTO bookstore VALUES (18, "King: A Life", "nonfiction", 26, 48);
+INSERT INTO bookstore VALUES (19, "Romantic Comedy", "romance", 22, 24);
+INSERT INTO bookstore VALUES (20, "Yours Truly", "romance", 23, 30);
+INSERT INTO bookstore VALUES (21, "Happy Place", "romance", 26, 50);
+
+-- display the total price of all books in each section
+
+SELECT section, SUM(price) 
+FROM bookstore 
+GROUP BY section;
+
+-- display the titles and prices of books in the fiction and fantasy sections, ordered by price
+
+SELECT title, price, section FROM bookstore 
+WHERE section = "fiction" OR section = "fantasy" 
+ORDER BY price;
+
+-- display the average price of romance books
+
+SELECT AVG(price) "Average Price of Romance Book" FROM bookstore
+WHERE section = "romance";
+
+-- show the 5 most sold titles
+
+SELECT title, number_sold FROM bookstore
+ORDER BY number_sold desc
+LIMIT 5;
